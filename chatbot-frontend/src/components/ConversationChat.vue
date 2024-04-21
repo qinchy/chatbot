@@ -3,7 +3,8 @@
     <!-- 新增对话历史记录容器 -->
     <div class="message-history">
       <ul>
-        <li v-for="(message, index) in messages" :key="index" :class="{ 'self': message.role === 'user', 'bot': message.role === 'bot' }">
+        <li v-for="(message, index) in messages" :key="index"
+          :class="{ 'self': message.role === 'user', 'bot': message.role === 'bot' }">
           <!-- 添加头像 -->
           <img :src="getAvatar(message.role)" :alt="message.role + ' avatar'" class="avatar" />
           <!-- 消息内容 -->
@@ -63,51 +64,57 @@ export default {
         default:
           return '';
       }
-    },  
+    },
   },
 };
 </script>
 
 <style scoped>
-  /* 添加对根元素（假设为#app）的样式 */
-  #app {
-     display: flex;
-     min-height: 100vh;
-     flex-direction: column;
-     justify-content: space-between;
-   }
+/* 添加对根元素（假设为#app）的样式 */
+#app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  /* 保留原有样式 */
-  .conversation-chat {
-     max-width: 700px;
-     margin: 0 auto; /* 可以删除此行，因为不再需要手动设置垂直距离 */
-     flex-grow: 1; /* 新增样式 */
-   }
+/* 保留原有样式 */
+.conversation-chat {
+  max-width: 700px;
+  margin: 0 auto;
+  /* 可以删除此行，因为不再需要手动设置垂直距离 */
+  flex-grow: 1;
+  /* 新增样式 */
+}
 
-  /* 添加头像样式 */
-  .avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px; /* 与消息内容之间的间距 */
-  }
+/* 添加头像样式 */
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  /* 与消息内容之间的间距 */
+}
 
-  /* 新增对话历史记录容器样式 */
-  .message-history {
-    height: calc(100% - 90px); /* 调整高度以适应屏幕高度减去输入框高度（假设为40px） */
-    overflow-y: auto; /* 添加滚动条以容纳过长的对话历史 */
-  }
+/* 新增对话历史记录容器样式 */
+.message-history {
+  height: calc(100% - 90px);
+  /* 调整高度以适应屏幕高度减去输入框高度（假设为40px） */
+  overflow-y: auto;
+  /* 添加滚动条以容纳过长的对话历史 */
+}
 
-  /* 用户消息右对齐 */
-  .self {
-    text-align: right;
-  }   
+/* 用户消息右对齐 */
+.self {
+  text-align: right;
+}
 
 ul {
   list-style-type: none;
   padding: 0;
-  flex-direction: column-reverse; /* 新增样式 */
+  flex-direction: column-reverse;
+  /* 新增样式 */
 }
 
 li {
@@ -121,7 +128,8 @@ li {
 
 .bot {
   color: #6C757D;
-  text-align: left; /* 显式声明左对齐 */
+  text-align: left;
+  /* 显式声明左对齐 */
 }
 
 form {
